@@ -1,0 +1,15 @@
+Website Address: https://i477927.luna.fhict.nl
+Gitlab Link: https://git.fhict.nl/I477927/lachezar-mitov-synthesis-assignment
+
+Credentials for Desktop App:
+Username: fifi
+Password: fifi
+
+Credentials for Web App:
+Username: gigi
+Password: gigi
+
+Requirements choosen:
+Major requirement FR-06
+Minor requirement FR-10
+

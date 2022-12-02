@@ -1,0 +1,835 @@
+<Project>
+  <Name>Synthesis</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Untitled</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Tournament</Name>
+        <Access>Public</Access>
+        <Location left="848" top="1375" />
+        <Size width="1071" height="655" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private int _id</Member>
+        <Member type="Field">private SportType _sportType</Member>
+        <Member type="Field">private string _description</Member>
+        <Member type="Field">private string _location</Member>
+        <Member type="Field">private TournamentType _tournamentType</Member>
+        <Member type="Field">private DateTime _startDate</Member>
+        <Member type="Field">private DateTime _endDate</Member>
+        <Member type="Field">private int _minPlayers</Member>
+        <Member type="Field">private int _maxPlayers</Member>
+        <Member type="Field">private List&lt;User&gt; _players</Member>
+        <Member type="Constructor">public Tournament(int id, SportType sportType, string description, string location, TournamentType tournamentType, DateTime startDate, DateTime endDate, int minPlayers, int maxPlayers, List&lt;User&gt; players)</Member>
+        <Member type="Constructor">public Tournament(int id, SportType sportType, string description, string location, TournamentType tournamentType, DateTime startDate, DateTime endDate, int minPlayers, int maxPlayers)</Member>
+        <Member type="Constructor">public Tournament(SportType sportType, string description, string location, TournamentType tournamentType, DateTime startDate, DateTime endDate, int minPlayers, int maxPlayers)</Member>
+        <Member type="Property">public int Id { get; set; }</Member>
+        <Member type="Property">public SportType SportType { get; }</Member>
+        <Member type="Property">private SportType SportType { set; }</Member>
+        <Member type="Property">public string Description { get; }</Member>
+        <Member type="Property">private string Description { set; }</Member>
+        <Member type="Property">public string Location { get; }</Member>
+        <Member type="Property">private string Location { set; }</Member>
+        <Member type="Property">public TournamentType TournamentType { get; }</Member>
+        <Member type="Property">private TournamentType TournamentType { set; }</Member>
+        <Member type="Property">public DateTime StartDate { get; }</Member>
+        <Member type="Property">private DateTime StartDate { set; }</Member>
+        <Member type="Property">public DateTime EndDate { get; }</Member>
+        <Member type="Property">private DateTime EndDate { set; }</Member>
+        <Member type="Property">public int MinPlayers { get; }</Member>
+        <Member type="Property">private int MinPlayers { set; }</Member>
+        <Member type="Property">public int MaxPlayers { get; }</Member>
+        <Member type="Property">private int MaxPlayers { set; }</Member>
+        <Member type="Property">public List&lt;User&gt; Players { get; set; }</Member>
+        <Member type="Method">public abstract List&lt;AMatch&gt; CreateSchedule()</Member>
+        <Member type="Method">public override string ToString()</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>User</Name>
+        <Access>Public</Access>
+        <Location left="2295" top="1395" />
+        <Size width="653" height="570" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int _id</Member>
+        <Member type="Field">string _fName</Member>
+        <Member type="Field">string _lName</Member>
+        <Member type="Field">string _email</Member>
+        <Member type="Field">string _phone</Member>
+        <Member type="Field">AccountType _type</Member>
+        <Member type="Field">string _username</Member>
+        <Member type="Field">string _password</Member>
+        <Member type="Constructor">public User()</Member>
+        <Member type="Constructor">public User(int id, string fName, string lName, string email, string phone, AccountType type, string username, string password)</Member>
+        <Member type="Constructor">public User(string fName, string lName, string email, string phone, AccountType type, string username, string password)</Member>
+        <Member type="Constructor">public User(PlayerDTO playerDto)</Member>
+        <Member type="Property">public int Id { get; set; }</Member>
+        <Member type="Property">public string FName { get; }</Member>
+        <Member type="Property">private string FName { set; }</Member>
+        <Member type="Property">public string LName { get; }</Member>
+        <Member type="Property">private string LName { set; }</Member>
+        <Member type="Property">public string Email { get; }</Member>
+        <Member type="Property">private string Email { set; }</Member>
+        <Member type="Property">public string Phone { get; }</Member>
+        <Member type="Property">private string Phone { set; }</Member>
+        <Member type="Property">public AccountType Type { get; }</Member>
+        <Member type="Property">private AccountType Type { set; }</Member>
+        <Member type="Property">public string Username { get; }</Member>
+        <Member type="Property">private string Username { set; }</Member>
+        <Member type="Property">public string Password { get; }</Member>
+        <Member type="Property">private string Password { set; }</Member>
+        <Member type="Method">public void UpdatePassword(string password)</Member>
+        <Member type="Method">public string ToString()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AMatch</Name>
+        <Access>Public</Access>
+        <Location left="1926" top="2136" />
+        <Size width="632" height="434" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int _id</Member>
+        <Member type="Field">Tournament _tournament</Member>
+        <Member type="Field">User _player1</Member>
+        <Member type="Field">User _player2</Member>
+        <Member type="Field">int _player1_Score</Member>
+        <Member type="Field">int _player2_Score</Member>
+        <Member type="Field">int _round</Member>
+        <Member type="Constructor">public AMatch(int id, Tournament tournament, User player1, User player2, int player1_Score, int player2_Score, int round)</Member>
+        <Member type="Constructor">public AMatch(Tournament tournament, User player1, User player2, int player1_Score, int player2_Score, int round)</Member>
+        <Member type="Property">public int Id { get; set; }</Member>
+        <Member type="Property">public Tournament Tournament { get; }</Member>
+        <Member type="Property">public User Player1 { get; }</Member>
+        <Member type="Property">public Userr Player2 { get; }</Member>
+        <Member type="Property">public int Player1_Score { get; }</Member>
+        <Member type="Property">private int Player1_Score { set; }</Member>
+        <Member type="Property">public int Player2_Score { get; }</Member>
+        <Member type="Property">private int Player2_Score { set; }</Member>
+        <Member type="Property">public int Round { get; }</Member>
+        <Member type="Property">private int Round { set; }</Member>
+        <Member type="Method">public void Result(int player1Score, int player2Score)</Member>
+        <Member type="Method">public override string ToString()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Player</Name>
+        <Access>Public</Access>
+        <Location left="2727" top="2164" />
+        <Size width="664" height="264" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public Player()</Member>
+        <Member type="Constructor">public Player(int id, string fName, string lName, string email, string phone, AccountType type, string username, string password)</Member>
+        <Member type="Constructor">public Player(string fName, string lName, string email, string phone, AccountType type, string username, string password)</Member>
+        <Member type="Constructor">public Player(PlayerDTO playerDto)</Member>
+        <Member type="Property">public int Wins { get; }</Member>
+        <Member type="Property">private int Wins { set; }</Member>
+        <Member type="Property">public int Losses { get; }</Member>
+        <Member type="Property">private int Losses { set; }</Member>
+        <Member type="Method">public void IsWinner()</Member>
+        <Member type="Method">public void IsLosser()</Member>
+        <Member type="Method">public override string ToString()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Employee</Name>
+        <Access>Public</Access>
+        <Location left="3414" top="2164" />
+        <Size width="692" height="264" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public Employee(int id, string fName, string lName, string email, string phone, AccountType type, string username, string password)</Member>
+        <Member type="Constructor">public Employee(string fName, string lName, string email, string phone, AccountType type, string username, string password)</Member>
+        <Member type="Method">public override string ToString()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TournamentManager</Name>
+        <Access>Public</Access>
+        <Location left="142" top="1402" />
+        <Size width="571" height="307" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public TournamentManager(ITournamentRepository tournamentRepository, IMatchRepository matchRepository)</Member>
+        <Member type="Method">public Tournament GetTournament(int id)</Member>
+        <Member type="Method">public List&lt;Tournament&gt; GetAllTournaments()</Member>
+        <Member type="Method">public List&lt;Tournament&gt; GetAllTournamentsPerPlayer(User user)</Member>
+        <Member type="Method">public void CreateSchedule(Tournament tournament)</Member>
+        <Member type="Method">public void AddPlayerToTournament(Tournament tournament, User user)</Member>
+        <Member type="Method">public void RemovePlayerFromTournament(Tournament tournament, User user)</Member>
+        <Member type="Method">public void AddTournament(Tournament tournament)</Member>
+        <Member type="Method">public void UpdateTournament(Tournament tournament)</Member>
+        <Member type="Method">public void DeleteTournament(int id)</Member>
+        <Member type="Method">public void TournamentLocked(Tournament tournament)</Member>
+        <Member type="Method">public bool TournamentNotPlayed(Tournament tournament)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MatchManager</Name>
+        <Access>Public</Access>
+        <Location left="2406" top="2701" />
+        <Size width="525" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public MatchManager(IMatchRepository matchRepository)</Member>
+        <Member type="Method">public AMatch GetMatch(int id)</Member>
+        <Member type="Method">public AMatch GetMatchByPlayersAndTournament(int tournament_Id, int playe1_Id, int player2_Id)</Member>
+        <Member type="Method">public List&lt;AMatch&gt; GetAllMatches()</Member>
+        <Member type="Method">public List&lt;AMatch&gt; GetAllMatchesPerTournament(Tournament tournament)</Member>
+        <Member type="Method">public void AddMatch(AMatch match)</Member>
+        <Member type="Method">public void UpdateMatch(AMatch match)</Member>
+        <Member type="Method">public void DeleteMatch(int id)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>UserManager</Name>
+        <Access>Public</Access>
+        <Location left="3004" top="1028" />
+        <Size width="407" height="281" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public UserManager(IUserRepository userRepository)</Member>
+        <Member type="Method">public void ResetAllUsers()</Member>
+        <Member type="Method">public User GetUser(int id)</Member>
+        <Member type="Method">public List&lt;User&gt; GetAllUsers()</Member>
+        <Member type="Method">public int GetPlayersWinsPerTournament(Tournament tournament, User player)</Member>
+        <Member type="Method">public List&lt;User&gt; GetAllPlayersPerTournament(int tournamentId)</Member>
+        <Member type="Method">public void AddUser(User user)</Member>
+        <Member type="Method">public void UpdateUser(User user)</Member>
+        <Member type="Method">public void UpdateUserPassword(User user, string password)</Member>
+        <Member type="Method">public void DeleteUser(int id)</Member>
+        <Member type="Method">public void IsWinner(User user)</Member>
+        <Member type="Method">public void IsLoser(User user)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IUserRepository</Name>
+        <Access>Public</Access>
+        <Location left="2460" top="697" />
+        <Size width="408" height="248" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">User GetUser(int id)</Member>
+        <Member type="Method">List&lt;User&gt; GetAllUsers()</Member>
+        <Member type="Method">int GetPlayersWinsPerTournament(Tournament tournament, User player)</Member>
+        <Member type="Method">List&lt;User&gt; GetPlayersPerTournament(int tournamentId)</Member>
+        <Member type="Method">void AddPlayer(User player)</Member>
+        <Member type="Method">void AddEmployee(User employee)</Member>
+        <Member type="Method">void UpdateUser(User user)</Member>
+        <Member type="Method">void UpdateUserPassword(User user, string password)</Member>
+        <Member type="Method">void DeleteUser(int id)</Member>
+        <Member type="Method">void IsWinner(User user)</Member>
+        <Member type="Method">void IsLoser(User user)</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>UserRepository</Name>
+        <Access>Public</Access>
+        <Location left="2460" top="1028" />
+        <Size width="408" height="281" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string connString</Member>
+        <Member type="Method">public User GetUser(int id)</Member>
+        <Member type="Method">public List&lt;User&gt; GetAllUsers()</Member>
+        <Member type="Method">public int GetPlayersWinsPerTournament(Tournament tournament, User player)</Member>
+        <Member type="Method">public List&lt;User&gt; GetPlayersPerTournament(int tournamentId)</Member>
+        <Member type="Method">public void AddPlayer(User player)</Member>
+        <Member type="Method">public void AddEmployee(User employee)</Member>
+        <Member type="Method">public void UpdateUser(User user)</Member>
+        <Member type="Method">public void UpdateUserPassword(User user, string password)</Member>
+        <Member type="Method">public void DeleteUser(int id)</Member>
+        <Member type="Method">public void IsWinner(User user)</Member>
+        <Member type="Method">public void IsLoser(User user)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Interface">
+        <Name>ITournamentManager</Name>
+        <Access>Public</Access>
+        <Location left="247" top="981" />
+        <Size width="418" height="248" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">Tournament GetTournament(int id)</Member>
+        <Member type="Method">List&lt;Tournament&gt; GetAllTournaments()</Member>
+        <Member type="Method">List&lt;Tournament&gt; GetAllTournamentsPerPlayer(User user)</Member>
+        <Member type="Method">void CreateSchedule(Tournament tournament)</Member>
+        <Member type="Method">void AddTournament(Tournament tournament)</Member>
+        <Member type="Method">void AddPlayerToTournament(Tournament tournament, User player)</Member>
+        <Member type="Method">void RemovePlayerFromTournament(Tournament tournament, User player)</Member>
+        <Member type="Method">void UpdateTournament(Tournament tournament)</Member>
+        <Member type="Method">void DeleteTournament(int id)</Member>
+        <Member type="Method">void TournamentLocked(Tournament tournament)</Member>
+        <Member type="Method">bool TournamentNotPlayed(Tournament tournament)</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>TournamentRepository</Name>
+        <Access>Public</Access>
+        <Location left="1418" top="981" />
+        <Size width="416" height="242" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string connString</Member>
+        <Member type="Method">public Tournament GetTournament(int id)</Member>
+        <Member type="Method">public List&lt;Tournament&gt; GetAllTournaments()</Member>
+        <Member type="Method">public List&lt;Tournament&gt; GetAllTournamentsPerPlayer(User user)</Member>
+        <Member type="Method">public void AddTournament(Tournament tournament)</Member>
+        <Member type="Method">public void AddPlayerToTournament(Tournament tournament, User player)</Member>
+        <Member type="Method">public void RemovePlayerFromTournament(Tournament tournament, User player)</Member>
+        <Member type="Method">public void UpdateTournament(Tournament tournament)</Member>
+        <Member type="Method">public void DeleteTournament(int id)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Interface">
+        <Name>ITournamentRepository</Name>
+        <Access>Public</Access>
+        <Location left="734" top="981" />
+        <Size width="427" height="248" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">Tournament GetTournament(int id)</Member>
+        <Member type="Method">List&lt;Tournament&gt; GetAllTournaments()</Member>
+        <Member type="Method">List&lt;Tournament&gt; GetAllTournamentsPerPlayer(User user)</Member>
+        <Member type="Method">void AddTournament(Tournament tournament)</Member>
+        <Member type="Method">void AddPlayerToTournament(Tournament tournament, User player)</Member>
+        <Member type="Method">void RemovePlayerFromTournament(Tournament tournament, User player)</Member>
+        <Member type="Method">void UpdateTournament(Tournament tournament)</Member>
+        <Member type="Method">void DeleteTournament(int id)</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IMatchManager</Name>
+        <Access>Public</Access>
+        <Location left="2406" top="3072" />
+        <Size width="527" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">AMatch GetMatch(int id)</Member>
+        <Member type="Method">AMatch GetMatchByPlayersAndTournament(int tournament_Id, int playe1_Id, int player2_Id)</Member>
+        <Member type="Method">List&lt;AMatch&gt; GetAllMatches()</Member>
+        <Member type="Method">List&lt;AMatch&gt; GetAllMatchesPerTournament(Tournament tournament)</Member>
+        <Member type="Method">void AddMatch(AMatch match)</Member>
+        <Member type="Method">void UpdateMatch(AMatch match)</Member>
+        <Member type="Method">void DeleteMatch(int id)</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>MatchRepository</Name>
+        <Access>Public</Access>
+        <Location left="1829" top="2701" />
+        <Size width="522" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string connString</Member>
+        <Member type="Method">public AMatch GetMatch(int id)</Member>
+        <Member type="Method">public AMatch GetMatchByPlayersAndTournament(int tournament_Id, int playe1_Id, int player2_Id)</Member>
+        <Member type="Method">public List&lt;AMatch&gt; GetAllMatches()</Member>
+        <Member type="Method">public List&lt;AMatch&gt; GetAllMatchesPerTournament(Tournament tournament)</Member>
+        <Member type="Method">public void AddMatch(AMatch match)</Member>
+        <Member type="Method">public void UpdateMatch(AMatch match)</Member>
+        <Member type="Method">public void DeleteMatch(int id)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IMatchRepository</Name>
+        <Access>Public</Access>
+        <Location left="1829" top="3072" />
+        <Size width="525" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">AMatch GetMatch(int id)</Member>
+        <Member type="Method">AMatch GetMatchByPlayersAndTournament(int tournament_Id, int playe1_Id, int player2_Id)</Member>
+        <Member type="Method">List&lt;AMatch&gt; GetAllMatches()</Member>
+        <Member type="Method">List&lt;AMatch&gt; GetAllMatchesPerTournament(Tournament tournament)</Member>
+        <Member type="Method">void AddMatch(AMatch match)</Member>
+        <Member type="Method">void UpdateMatch(AMatch match)</Member>
+        <Member type="Method">void DeleteMatch(int id)</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IUserManager</Name>
+        <Access>Public</Access>
+        <Location left="3004" top="697" />
+        <Size width="407" height="248" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">void ResetAllUsers()</Member>
+        <Member type="Method">void GetUser(int id)</Member>
+        <Member type="Method">void GetAllUsers()</Member>
+        <Member type="Method">int GetPlayersWinsPerTournament(Tournament tournament, User player)</Member>
+        <Member type="Method">List&lt;User&gt; GetAllPlayersPerTournament(int tournamentId)</Member>
+        <Member type="Method">void AddUser(User user)</Member>
+        <Member type="Method">void UpdateUser(User user)</Member>
+        <Member type="Method">void UpdateUserPassword(User user, string password)</Member>
+        <Member type="Method">void DeleteUser(int id)</Member>
+        <Member type="Method">void IsWinner(User user)</Member>
+        <Member type="Method">void IsLoser(User user)</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>RoundRobin</Name>
+        <Access>Public</Access>
+        <Location left="314" top="2184" />
+        <Size width="1062" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public RoundRobin(int id, SportType sportType, string description, string location, TournamentType tournamentType, DateTime startDate, DateTime endDate, int minPlayers, int maxPlayers, List&lt;User&gt; players)</Member>
+        <Member type="Constructor">public RoundRobin(int id, SportType sportType, string description, string location, TournamentType tournamentType, DateTime startDate, DateTime endDate, int minPlayers, int maxPlayers)</Member>
+        <Member type="Constructor">public RoundRobin(SportType sportType, string description, string location, TournamentType tournamentType, DateTime startDate, DateTime endDate, int minPlayers, int maxPlayers)</Member>
+        <Member type="Method">public override List&lt;AMatch&gt; CreateSchedule()</Member>
+        <Member type="Method">public override string ToString()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AuthenticationManager</Name>
+        <Access>Public</Access>
+        <Location left="1769" top="570" />
+        <Size width="394" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public AuthenticationManager(IUserRepository userRepository)</Member>
+        <Member type="Method">public void ResetUsers()</Member>
+        <Member type="Method">public User GetPlayerByUsername(string username)</Member>
+        <Member type="Method">public User GetEmployeeByUsername(string username)</Member>
+        <Member type="Method">public int AuthenticatePlayer(string username, string enteredPassword)</Member>
+        <Member type="Method">public int AuthenticateEmployee(string username, string enteredPassword)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IAuthenticationManager</Name>
+        <Access>Public</Access>
+        <Location left="1224" top="570" />
+        <Size width="369" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">void ResetUsers()</Member>
+        <Member type="Method">User GetPlayerByUsername(string username)</Member>
+        <Member type="Method">User GetEmployeeByUsername(string username)</Member>
+        <Member type="Method">int AuthenticatePlayer(string username, string password)</Member>
+        <Member type="Method">int AuthenticateEmployee(string username, string password)</Member>
+      </Entity>
+      <Entity type="Enum">
+        <Name>TournamentType</Name>
+        <Access>Public</Access>
+        <Location left="2033" top="1375" />
+        <Size width="182" height="108" />
+        <Collapsed>False</Collapsed>
+        <Value>RounddRobin</Value>
+        <Value>DoubleRoundRobin</Value>
+      </Entity>
+      <Entity type="Enum">
+        <Name>AccountType</Name>
+        <Access>Public</Access>
+        <Location left="3089" top="1577" />
+        <Size width="169" height="104" />
+        <Collapsed>False</Collapsed>
+        <Value>Player</Value>
+        <Value>Employee</Value>
+      </Entity>
+      <Entity type="Comment">
+        <Text>TournamentType Enum contains the implemented types of tournaments in the application, more types can be easily implemented</Text>
+        <Location left="2033" top="1491" />
+        <Size width="182" height="98" />
+      </Entity>
+      <Entity type="Comment">
+        <Text>AccountType Enum contains the implemented types of user accounts in the application</Text>
+        <Location left="3089" top="1692" />
+        <Size width="169" height="80" />
+      </Entity>
+      <Entity type="Class">
+        <Name>PasswordHasher</Name>
+        <Access>Public</Access>
+        <Location left="2460" top="505" />
+        <Size width="408" height="151" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public string HashPassword(string password)</Member>
+        <Member type="Method">public bool ValidateHashedPassword(string input, string hashedPassword)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Enum">
+        <Name>SportType</Name>
+        <Access>Public</Access>
+        <Location left="2033" top="1696" />
+        <Size width="182" height="90" />
+        <Collapsed>False</Collapsed>
+        <Value>Badminton</Value>
+      </Entity>
+      <Entity type="Comment">
+        <Text>SportType Enum contains the implemented types of sports in the application, more types can be easily implemented</Text>
+        <Location left="2033" top="1801" />
+        <Size width="182" height="98" />
+      </Entity>
+      <Entity type="Class">
+        <Name>DoubleRoundRobin</Name>
+        <Access>Public</Access>
+        <Location left="660" top="2498" />
+        <Size width="1105" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public DoubleRoundRobin(int id, SportType sportType, string description, string location, TournamentType tournamentType, DateTime startDate, DateTime endDate, int minPlayers, int maxPlayers, List&lt;User&gt; players)</Member>
+        <Member type="Constructor">public DoubleRoundRobin(int id, SportType sportType, string description, string location, TournamentType tournamentType, DateTime startDate, DateTime endDate, int minPlayers, int maxPlayers)</Member>
+        <Member type="Constructor">public DoubleRoundRobin(SportType sportType, string description, string location, TournamentType tournamentType, DateTime startDate, DateTime endDate, int minPlayers, int maxPlayers)</Member>
+        <Member type="Method">public override List&lt;AMatch&gt; CreateSchedule()</Member>
+        <Member type="Method">public override string ToString()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PlayerDTO</Name>
+        <Access>Public</Access>
+        <Location left="3135" top="2543" />
+        <Size width="274" height="332" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public int Id { get; set; }</Member>
+        <Member type="Property">public string FName { get; set; }</Member>
+        <Member type="Property">publicstring LName { get; set; }</Member>
+        <Member type="Property">public string Email { get; set; }</Member>
+        <Member type="Property">public string Phone { get; set; }</Member>
+        <Member type="Property">public AccountType Type { get; set; }</Member>
+        <Member type="Property">public string Username { get; set; }</Member>
+        <Member type="Property">public string Password { get; set; }</Member>
+        <Member type="Property">public int Wins { get; set; }</Member>
+        <Member type="Property">public int Losses { get; set; }</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Generalization" first="3" second="1">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>2872</X>
+          <Y>2023</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Generalization" first="4" second="1">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>2996</X>
+          <Y>1864</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Association" first="5" second="0">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <EndRole>tournaments</EndRole>
+        <EndMultiplicity>*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Realization" first="5" second="10">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>301</X>
+          <Y>1377</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Association" first="5" second="12">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>415</X>
+          <Y>1377</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <EndRole>_tournamentRepository</EndRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Realization" first="11" second="12">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Dependency" first="11" second="0">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Dependency" first="14" second="2">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>2102</X>
+          <Y>2600</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Association" first="6" second="2">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>2314</X>
+          <Y>2607</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <EndRole>matches</EndRole>
+        <EndMultiplicity>*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Realization" first="14" second="15">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>1993</X>
+          <Y>3047</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Association" first="6" second="15">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>2570</X>
+          <Y>2962</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>2233</X>
+          <Y>3047</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <EndRole>_matchRepository</EndRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Realization" first="6" second="13">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>2751</X>
+          <Y>2965</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>2751</X>
+          <Y>3047</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Association" first="7" second="8">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>2979</X>
+          <Y>1148</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>2893</X>
+          <Y>806</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <EndRole>_userRepository</EndRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Realization" first="9" second="8">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="7" second="16">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="0" second="1">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1960</X>
+          <Y>1670</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <EndRole>players</EndRole>
+        <EndMultiplicity>0..*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="2" second="1">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>2374</X>
+          <Y>2024</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <EndRole>player1</EndRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="2" second="1">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>2190</X>
+          <Y>2111</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>2478</X>
+          <Y>1994</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <EndRole>player2</EndRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Dependency" first="9" second="1">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="7" second="1">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>3217</X>
+          <Y>1338</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>3025</X>
+          <Y>1521</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <EndRole>users</EndRole>
+        <EndMultiplicity>0..*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="0" second="20">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1950</X>
+          <Y>1454</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="1" second="21">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="18" second="1">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>2195</X>
+          <Y>687</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>2360</X>
+          <Y>1368</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <EndRole>users</EndRole>
+        <EndMultiplicity>0..*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Realization" first="18" second="19">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="18" second="9">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>2062</X>
+          <Y>848</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>2435</X>
+          <Y>1109</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <EndRole>_userRepository</EndRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="18" second="24">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <EndRole>_passwordHasher</EndRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Generalization" first="17" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1052</X>
+          <Y>2150</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1052</X>
+          <Y>2088</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Association" first="0" second="25">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Generalization" first="27" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1458</X>
+          <Y>2473</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Association" first="5" second="15">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>216</X>
+          <Y>1754</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1750</X>
+          <Y>3193</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <EndRole>_matchRepository</EndRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="2" second="0">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1882</X>
+          <Y>2332</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1682</X>
+          <Y>2114</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <EndRole>tournament</EndRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Dependency" first="3" second="28">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Dependency" first="1" second="28">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>2623</X>
+          <Y>1990</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>2732</X>
+          <Y>2600</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Association" first="18" second="16">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1978</X>
+          <Y>449</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>3206</X>
+          <Y>672</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <EndRole>_userManager</EndRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>
